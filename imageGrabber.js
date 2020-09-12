@@ -21,7 +21,7 @@ async function timeout() {
     setTimeout(async function () {
         let startAt = Date.now()
         let id = md5(Date.now()).substring(22)
-        await request(url, async (error, response, body) => {
+        await request(api, async (error, response, body) => {
             if (!error && response.statusCode === 200) {
                 bod = JSON.parse(body)
 
