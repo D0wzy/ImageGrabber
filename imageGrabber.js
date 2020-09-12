@@ -34,7 +34,13 @@ async function timeout() {
                     const res = await fetch(bod.image);
                     await new Promise((resolve, reject) => {
 
-                        const fileStream = fs.createWriteStream(`./images/${id}.png`);
+                        
+                        let fileStream
+
+                        if(bod.message.endsWith(".png")) fileStream = fs.createWriteStream(`./images/${id}.png`);
+                        if(bod.message.endsWith(".jpg")) fileStream = fs.createWriteStream(`./images/${id}.jpg`);
+                        if(bod.message.endsWith(".jpeg")) fileStream = fs.createWriteStream(`./images/${id}.jpeg`);
+                        if(bod.message.endsWith(".gif")) fileStream = fs.createWriteStream(`./images/${id}.gif`);
 
                         console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] Writing ${bod.image} in ${id}.png`)
                         console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] ${id}.png writed in ${Date.now() - startAt}ms`)
