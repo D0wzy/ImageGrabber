@@ -1,7 +1,7 @@
 const fs = require('fs')
-const request = require("request")
 const md5 = require("md5")
 const fetch = require("node-fetch");
+const chalk = require('chalk')
 
   console.log("");                                   
   console.log("");                                  
