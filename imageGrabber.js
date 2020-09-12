@@ -1,15 +1,16 @@
 const fs = require('fs')
+const request = require("request")
 const md5 = require("md5")
 const fetch = require("node-fetch");
 const chalk = require('chalk')
 
   console.log("");                                   
   console.log("");                                  
-  console.log((chalk.yellow(`                                                               Created by D0wzy !`)));  
+  console.log((chalk.blue(`                                                               Created by ${chalk.bold(chalk.underline("D0wzy"))} !`)));  
   console.log("");                                   
-  console.log((chalk.red(`                                                       VoltBot: https://voltbot.xyz/discord`)));   
-  console.log((chalk.red(`                                                     Twitter: https://twitter.com/D0wzy`)));   
-  console.log((chalk.red(`                                                       Github: https://github.com/D0wzy`)));   
+  console.log((chalk.blue(`                                                       VoltBot: https://voltbot.xyz/discord`)));   
+  console.log((chalk.blue(`                                                     Twitter: https://twitter.com/D0wzy`)));   
+  console.log((chalk.blue(`                                                       Github: https://github.com/D0wzy`)));   
   console.log("");                                  
 
 let bod;
