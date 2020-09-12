@@ -3,18 +3,17 @@ const request = require("request")
 const md5 = require("md5")
 const fetch = require("node-fetch");
 
-console.log("\u200B")
-
-
-console.log("Image grabber by NZ")
-
-
-console.log("\u200B")
+  console.log("");                                   
+  console.log("");                                  
+  console.log((chalk.yellow(`                                                               Created by D0wzy !`)));  
+  console.log("");                                   
+  console.log((chalk.red(`                                                       VoltBot: https://voltbot.xyz/discord`)));   
+  console.log((chalk.red(`                                                     Twitter: https://twitter.com/D0wzy`)));   
+  console.log((chalk.red(`                                                       Github: https://github.com/D0wzy`)));   
+  console.log("");                                  
 
 let bod;
-let type = "dog"
-const url = `https://some-random-api.ml/animal/${type}`
-
+const api = "https://some-random-api.ml/animal/dog"
 let data = require('./data.json')
 
 console.log("Starting !")
