@@ -35,15 +35,10 @@ async function timeout() {
                     await new Promise((resolve, reject) => {
 
                         
-                        let fileStream
+                        let fileStream = fs.createWriteStream(`./images/${id}.${bod.image.split(".").pop()}`);
 
-                        if(bod.message.endsWith(".png")) fileStream = fs.createWriteStream(`./images/${id}.png`);
-                        if(bod.message.endsWith(".jpg")) fileStream = fs.createWriteStream(`./images/${id}.jpg`);
-                        if(bod.message.endsWith(".jpeg")) fileStream = fs.createWriteStream(`./images/${id}.jpeg`);
-                        if(bod.message.endsWith(".gif")) fileStream = fs.createWriteStream(`./images/${id}.gif`);
-
-                        console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] Writing ${bod.image} in ${id}.png`)
-                        console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] ${id}.png writed in ${Date.now() - startAt}ms`)
+                        console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] Writing ${bod.image} in ${id}.${bod.image.split(".").pop()}`)
+                        console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] ${id}.${bod.image.split(".").pop()} writed in ${Date.now() - startAt}ms`)
                         res.body.pipe(fileStream);
                         data.push(bod.image)
                         save()
