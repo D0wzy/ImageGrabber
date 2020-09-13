@@ -38,8 +38,11 @@ async function timeout() {
                         let fileStream = fs.createWriteStream(`./images/${id}.${bod.image.split(".").pop()}`);
 
                         console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] Writing ${bod.image} in ${id}.${bod.image.split(".").pop()}`)
-                        console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] ${id}.${bod.image.split(".").pop()} writed in ${Date.now() - startAt}ms`)
+                        
                         res.body.pipe(fileStream);
+                      
+                        console.log(`[${new Date().toLocaleDateString()}] [${new Date().toLocaleTimeString()}] ${id}.${bod.image.split(".").pop()} writed in ${Date.now() - startAt}ms`)
+                        
                         data.push(bod.image)
                         save()
                         res.body.on("error", (err) => {
